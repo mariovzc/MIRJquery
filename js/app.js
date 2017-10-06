@@ -8,8 +8,8 @@ $(document).ready(function() {
 
   setTimeout(function(){
     $('.buttons-container').removeClass('scale-out').addClass('scale-in');
+    $('#number').focus();    
   }, 1000);
-  
 });
 $('#form').submit(function(e){
   e.preventDefault();
