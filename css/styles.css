@@ -1,0 +1,15 @@
+body{
+  background-color: #EDEDED;
+}
+h2{
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  font-size: 50px;
+}
+h3{
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  font-size: 30px;
+}
