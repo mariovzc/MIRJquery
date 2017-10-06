@@ -5,6 +5,10 @@ $(document).ready(function() {
   random = number.random();
   console.log(random);
   console.log('Deja de hacer trampa, aqui no esta la respuesta ;-)');
+
+  setTimeout(function(){
+    $('.buttons-container').removeClass('scale-out').addClass('scale-in');
+  }, 1000);
   
 });
 $('#form').submit(function(e){
