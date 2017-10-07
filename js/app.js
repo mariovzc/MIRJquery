@@ -9,14 +9,18 @@ $(document).ready(function() {
 $('form').submit(function( event ) {
   event.preventDefault();
   const nVal = this.number.value;
-
+  if(number.isInValid(nVal.split(''))){
+    $(this.number).addClass('invalid');
+    Materialize.toast('No pueden haber caracteres repetidos', 4000);
+    return;
+  }
   if(nVal.length != 4){
     $(this.number).addClass('invalid');
     Materialize.toast('Deben ser 4 caracteres', 4000);
     return;
   }
   $(this.number).removeClass('invalid');
-  game.validate( nVal.split(''), random.toString().split(''));
+  game.validate(nVal.split(''), random.toString().split(''));
   if(game.winner()){
     Materialize.toast('Tenemos un Ganador, Gracias por jugar mi amig@!!!, el juego se reiniciara automanticamente Gracias por jugar!! ',
                       4000, 
