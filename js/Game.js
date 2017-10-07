@@ -8,13 +8,17 @@ function Game(){
   };
   this.f = function(){
     return f;
-  }
+  };
   this.validate = function(number,rNumber){
+    p = 0, f = 0;
     number.forEach(function(element,index){
       if(rNumber.includes(element)) p++;
 
       if(element == rNumber[index]) f++;
     });
     return [p,f];
+  };
+  this.winner = function(){
+    return f === 4;
   }
 }
