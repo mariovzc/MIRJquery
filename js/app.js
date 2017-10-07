@@ -17,12 +17,17 @@ $('form').submit(function( event ) {
   }
   $(this.number).removeClass('invalid');
   game.validate( nVal.split(''), random.toString().split(''));
-  const p = game.p;
-  const f = game.f;
-
-  if(f === 4){
-    Materialize.toast('Tenemos un Ganador, Gracias por jugar mi amig@!!! !', 3000);    
+  if(game.winner()){
+    Materialize.toast('Tenemos un Ganador, Gracias por jugar mi amig@!!!, el juego se reiniciara automanticamente Gracias por jugar!! ',
+                      4000, 
+                      '', 
+                      function(){
+                        defaultValues();
+                      });
+  }else{
+    $('table  tbody').append('<tr><td>'+ nVal +'</td><td>' + game.p() + '</td><td>' + game.f() + '</td></tr>');
   }
+
 });
 $('#reset').click(function(){
   defaultValues();
@@ -30,9 +35,10 @@ $('#reset').click(function(){
 });
 function defaultValues(){
   random = number.random();
-  console.log("Hola Tramposo ;-)");
+  console.poo("Hola Tramposo ;-)");
   setTimeout(function(){
     $('.buttons-container').removeClass('scale-out').addClass('scale-in');
     $('#number').focus();    
   }, 1000);
+  $('table  tbody').html('');
 }
