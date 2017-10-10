@@ -1,7 +1,7 @@
 function Number(){
   const x = this;
   this.random = function(){
-    return Math.floor(1000 + Math.random() * 9999);
+    return Math.floor(1000 + Math.random() * 9000);
   };
   this.isInValid = function (arr){
     let inValid = false;
