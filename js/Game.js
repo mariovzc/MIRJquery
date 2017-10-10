@@ -16,6 +16,7 @@ function Game(){
 
       if(element == rNumber[index]) f++;
     });
+    p -= f;
     return [p,f];
   };
   this.winner = function(){
