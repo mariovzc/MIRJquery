@@ -1,25 +1,20 @@
-// las picas suman cuando tienen coincidienda en el array;
-// las fijas cuando tienen coincidencia y estan en la misma posicion;
-function Game(){
-  let p = 0; // picas
-  let f = 0; // fijas;
-  this.p = function(){
-    return p;
-  };
-  this.f = function(){
-    return f;
-  };
-  this.validate = function(number,rNumber){
-    p = 0, f = 0;
-    number.forEach(function(element,index){
-      if(rNumber.includes(element)) p++;
+class Game {
+  constructor () {
+    this.p = 0
+    this.f = 0
+  }
+  validate (number, rNumber) {
+    this.p = 0
+    this.f = 0
+    number.forEach((element, index) => {
+      if (rNumber.includes(element)) this.p++
 
-      if(element == rNumber[index]) f++;
-    });
-    p -= f;
-    return [p,f];
-  };
-  this.winner = function(){
-    return f === 4;
+      if (element === rNumber[index]) this.f++
+    })
+    this.p -= this.f
+    return [this.p, this.f]
+  }
+  winner () {
+    return this.f === 4
   }
 }
