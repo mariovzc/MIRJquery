@@ -1,6 +1,13 @@
-let random = 0;
-const number = new Number();
-const game = new Game();
+let random = 0
+const number = new Number()
+const game = new Game()
+
+let app = new Vue ({
+  el: '#app',
+  data:{
+    text: 'Hello world'
+  }
+})
 
 $(document).ready(function() {
   $('input#number').characterCounter();
